@@ -71,7 +71,8 @@ public class DownloadWorker extends Worker {
 //            fos.close();
 
             ContextWrapper contextWrapper = new ContextWrapper(getApplicationContext());
-            File directory = contextWrapper.getDir(getApplicationContext().getFilesDir().getName(), Context.MODE_APPEND);
+            //File directory = contextWrapper.getDir(getApplicationContext().getFilesDir().getName(), Context.MODE_APPEND);
+            File directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
             if (!directory.exists()){
                 directory.mkdir();
             }
@@ -114,7 +115,7 @@ public class DownloadWorker extends Worker {
 
 
 
-            Log.d("videopath", "doWork: encrypted "+outputFile.getAbsolutePath());
+     //       Log.d("videopath", "doWork: encrypted "+outputFile.getAbsolutePath());
 
         }catch (Exception e){
             e.printStackTrace();

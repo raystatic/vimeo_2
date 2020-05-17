@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -67,17 +68,42 @@ public class Main2Activity extends AppCompatActivity {
         findViewById(R.id.encrypt).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                encryptFile();
+                //encryptFile();
+                if (!TextUtils.isEmpty(path)){
+                    if (VideoCrypt.encrypt(path))
+                        Toast.makeText(Main2Activity.this,"Video Encrypted", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(Main2Activity.this,"Enpty path", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         findViewById(R.id.decrypt).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Main2Activity.this, VideoActivity.class);
-                intent.putExtra("path", path);
-                startActivity(intent);
+
+                if (!TextUtils.isEmpty(path)){
+                    if (VideoCrypt.decrypt(path))
+                        Toast.makeText(Main2Activity.this,"Video Decrypted", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(Main2Activity.this,"Enpty path", Toast.LENGTH_SHORT).show();
+                }
+
+//                Intent intent = new Intent(Main2Activity.this, VideoActivity.class);
+//                intent.putExtra("path", path);
+//                startActivity(intent);
 //                decryptFile();
+            }
+        });
+
+        findViewById(R.id.play).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!TextUtils.isEmpty(path)){
+                    Intent intent = new Intent(Main2Activity.this, VideoActivity.class);
+                    intent.putExtra("path", path);
+                    startActivity(intent);
+                }
             }
         });
 
