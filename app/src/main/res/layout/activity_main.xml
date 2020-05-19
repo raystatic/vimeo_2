@@ -79,6 +79,12 @@
             android:layout_height="wrap_content"
             android:text="@string/logout"/>
 
+        <Button
+            android:id="@+id/truecaller_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Truecaller"/>
+
         <TextView
             android:id="@+id/request_output_tv"
             android:layout_width="wrap_content"

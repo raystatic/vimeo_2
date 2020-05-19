@@ -12,4 +12,8 @@
     <string name="this_is_where_request_output_will_go">This is where request output will go.</string>
     <string name="request_time" formatted="false">Time - %s : %2d</string>
     <string name="gson_or_moshi_request_time_will_show_here_once_complete">Gson or Moshi request time will show here once complete.</string>
+
+<!--    <string name="partnerkey">35XHVd10d71c743d445738059fe98d8832392</string>-->
+    <string name="partnerKey">UErK06007cc153af743949871f2299198897e</string>
+
 </resources>

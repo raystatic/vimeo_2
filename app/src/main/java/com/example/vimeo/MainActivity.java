@@ -71,6 +71,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             }
         }
 
+        findViewById(R.id.truecaller_btn).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, TruecallerActivity.class));
+            }
+        });
+
         // ---- Initial UI Setup ----
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setMessage("All of your API are belong to us...");
